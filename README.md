@@ -8,39 +8,26 @@ The primary objective of this project is to perform a comprehensive analysis of 
 3.	Regional Sales Analysis: Compare sales performance across states to determine regional demand variations.
 
 ## Scope of Work:
-1. Data Preprocessing & Modeling
-<br>
-•	Load and clean the provided dataset, ensuring data integrity and consistency.
-<br>
-•	Represented data in a star schema data model to organize data for reporting and analysis purposes.
-<br>
-2. Analysis Questions
-<br>
-•	Visualize sales trends over time using line charts and bar charts.
-<br> 
-•	Identify relations between product categories, revenue, and geographic locations.
-<br>
-3. Key Performance Metrics & Business Insights
-<br>
-•	Calculate Total Revenue, Units Sold, and Average Selling Price per Product.
-<br>
-•	Measure monthly sales trends, and seasonal variations.
-<br>
-•	Identify top-performing products, manufacturers, and states.
-<br>
-4. Reporting & Visualization
-<br>
-•	Create interactive Power BI dashboards for sales tracking.
-<br>
-•	Develop summary reports highlighting key insights and recommendations.
-<br>
-•	Present findings in a structured manner to stakeholders.
+1. Data Preprocessing & Modeling:
+-	Load and clean the provided dataset, ensuring data integrity and consistency.
+-	Represented data in a star schema data model to organize data for reporting and analysis purposes.
+2. Analysis Questions:
+-	Visualize sales trends over time using line charts and bar charts.
+-	Identify relations between product categories, revenue, and geographic locations.
+3. Key Performance Metrics & Business Insights:
+-	Calculate Total Revenue, Units Sold, and Average Selling Price per Product.
+-	Measure monthly sales trends, and seasonal variations.
+-	Identify top-performing products, manufacturers, and states.
+4. Reporting & Visualization:
+-	Create interactive Power BI dashboards for sales tracking.
+-	Develop summary reports highlighting key insights and recommendations.
+-	Present findings in a structured manner to stakeholders.
 
 ## Dataset Overview
-•	Total Rows: 9,800
-•	Total Columns: 15
-•	Dataset Type: Sales transaction data for a superstore.
-•	Column Descriptions
+-	Total Rows: 9,800
+-	Total Columns: 15
+-	Dataset Type: Sales transaction data for a superstore.
+-	Column Descriptions:
 1.	Order ID (String) – A unique identifier for each order.
 2.	Order Date (String) – The date when the order was placed.
 3.	Ship Date (String) – The date when the order was shipped.
@@ -60,24 +47,16 @@ The primary objective of this project is to perform a comprehensive analysis of 
 ## Steps
 1-Data Preprocessing (Clean and transform the data) & Modeling:
 <br>
+<br>
+
 1.1 Load Data into Power Query
 <br>
 <br>
-•	Open Power BI Desktop.
-<br>
-•	Click on "Home" > "Get Data" > "Text/CSV".
-<br>
-•	Select your Superstore_Sales_Cleaned.csv file and click Open.
-<br>
-•	Click on "Transform Data" to open Power Query Editor.
-<br>
-<br>
+
 1.2	Data Cleaning Steps
 <br>
 <br>
- Convert Data Types
- <br>
- Ensure that each column has the correct data type:
+ Convert Data Types (Ensure that each column has the correct data type):
  <br>
 •	Order Date & Ship Date → Convert to Date format. dates are in mixed formats (e.g., day/month/year vs. month/day/year),  we use "Using Locale" to specify the correct format.
 <br>
@@ -85,6 +64,8 @@ The primary objective of this project is to perform a comprehensive analysis of 
 <br>
 •	Other categorical columns (e.g., Customer ID, Product ID, Ship Mode) should be Text.
 <br>
+<br>
+
 Remove Duplicates and Errors
 <br>
 •	Select all columns 
@@ -97,26 +78,14 @@ Remove Duplicates and Errors
 1.3 Data Transformation
 <br>
 <br>
-Create New Columns (Calculated Columns)
-<br>
-Add "Shipping Duration":
-<br>
-o	Select Order Date and Ship Date.
-<br>
-o	Click Add Column > Custom Column.
-<br>
-Use the formula:
-<br>
-powerquery
-<br>
-CopyEdit
-<br>
-Duration.Days([Ship Date] - [Order Date])
-<br>
-Rename it as "Shipping Duration (Days)".
+Add Custom Column "Shipping Duration":
+-	Click Add Column > Custom Column.
+- Use the formula:
+Shipping Duration (Days)=Duration.Days([Ship Date] - [Order Date])
 <br>
 <br>
 1.4	Data Modeling
+  
 - Partitioned superstore sales table into orders, product, customer, address (using power query) and table date  (dax)
 - Removed duplicate values from tables
 - Populated a new Product ID (
