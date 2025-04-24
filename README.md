@@ -87,7 +87,7 @@ A problem we face was that several products had the sames Product ID which may l
 #### Overview
 The data model was structured using a star schema design to ensure clarity, performance, and ease of use. The model is centered around a single fact table ("Sales") and multiple dimension tables for slicing and filtering.<br>
 #### 5.1 	Tables Created
-####5.1.1	Sales Table (Fact Table)
+#### 5.1.1	Sales Table (Fact Table)
 •	Contains the transactional sales data.<br>
 •	Key columns include:<br>
 o	Order ID, Order Date, Customer ID, Product ID, Ship Date, Sales, Ship Mode, Shipment Duration, and Postal Code.<br>
